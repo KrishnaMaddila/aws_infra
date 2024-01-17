@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage("Clear Workspace"){
         steps {
-          sh 'rm -rvf t*'
+          sh 'rm -rvf a*'
         }
     }
     stage("Checkout") {
         steps {
-        sh 'git clone https://github.com/KrishnaMaddila/tomcat.git'
+        sh 'https://github.com/KrishnaMaddila/aws_infra.git'
       }
     }
 provider "aws" {
