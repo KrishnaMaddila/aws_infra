@@ -1,19 +1,4 @@
-pipeline {
-  agent any
-  stages {
-    stage("Clear Workspace"){
-        steps {
-          sh 'rm -rvf a*'
-        }
-    }
-    stage("Checkout") {
-        steps {
-        sh 'https://github.com/KrishnaMaddila/aws_infra.git'
-      }
-    }
-stage("creating infra") {
-        steps {
-        sh 'provider "aws" {
+provider "aws" {
   access_key = "AKIAUA4KPYLAJZDHIJLG"
   secret_key = "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"
   region  = "us-east-1"
@@ -124,6 +109,4 @@ resource "aws_instance" "web_instance" {
   tags = {
     "Name" : "terraform_vm"
   }
-}'
-      }
-    }
+}
