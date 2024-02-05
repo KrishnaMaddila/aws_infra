@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-    stage("Clear Workspace"){
-        steps {
-          sh 'rm -rvf a*'
+        stage("Clear Workspace"){
+            steps {
+                sh 'rm -rvf a*'
+            }
         }
-    }
         stage('git checkout') {
             steps {
                 sh 'git clone https://github.com/maddilakrishna/aws_infra.git'
