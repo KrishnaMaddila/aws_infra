@@ -7,7 +7,6 @@ pipeline {
           sh 'rm -rvf a*'
         }
     }
-    stages {
         stage('git checkout') {
             steps {
                 sh 'git clone https://github.com/maddilakrishna/aws_infra.git'
