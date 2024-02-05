@@ -2,9 +2,9 @@ pipeline {
     agent any
  
     stages {
-        stage('Checkout') {
+        stage('git checkout') {
             steps {
-                git branch: 'main', credentialsId: 'cred_id', url: 'repo_link'
+                sh 'git clone https://github.com/maddilakrishna/aws_infra.git'
             }
         }
         stage('Terraform init') {
