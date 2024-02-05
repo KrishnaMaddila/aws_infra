@@ -1,6 +1,12 @@
 pipeline {
     agent any
- 
+
+    stages {
+    stage("Clear Workspace"){
+        steps {
+          sh 'rm -rvf a*'
+        }
+    }
     stages {
         stage('git checkout') {
             steps {
